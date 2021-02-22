@@ -15,9 +15,9 @@ export default {
     },
     methods: {
         onSubmit() {
-            console.log(this.task)
+            // console.log(this.task)
             if (this.task.length !== 0) {
-                console.log('fus')
+                // console.log('fus')
                 const newTask = {
                     id: Date.now(),
                     task: this.task,
