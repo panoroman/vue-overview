@@ -1,9 +1,17 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <ToDo/>
-  <input v-model="msg">
-  {{msg}}
-  <AddTodo/>
+  <!-- <input v-model="msg">
+  {{msg}} -->
+  <AddTodo
+    @addTask='addToTasksList'
+  />
+  <ul>
+    <li v-for="t in tasksList" :key="t.id">
+      {{t.task}}
+    </li>
+  </ul>
+  <!-- {{tasksList}} -->
 </template>
 
 <script>
@@ -18,7 +26,13 @@ export default {
   },
   data() {
     return {
-      msg:''
+      msg:'',
+      tasksList: []
+    }
+  },
+  methods: {
+    addToTasksList(task) {
+      this.tasksList.push(task)
     }
   }
 }
