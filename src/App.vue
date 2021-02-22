@@ -3,15 +3,18 @@
   <ToDo/>
   <input v-model="msg">
   {{msg}}
+  <AddTodo/>
 </template>
 
 <script>
-import ToDo from './components/ToDo.vue'
+import ToDo from './components/ToDo'
+import AddTodo from './components/AddTodo'
 
 export default {
   name: 'App',
   components: {
-    ToDo
+    ToDo,
+    AddTodo
   },
   data() {
     return {
